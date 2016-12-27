@@ -13,7 +13,7 @@ assert cs.connected
 # main follow line logic
 def followLine(threshold):
     flag  = 0
-    speed = 20
+    speed = 100
     while(flag == 0):
         while(cs.value() < threshold):
             mA.run_to_rel_pos(position_sp="180", speed_sp=speed, stop_action="hold")
