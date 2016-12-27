@@ -12,16 +12,16 @@ assert cs.connected
 def getValue(option):
     if(option == 1):
         ev3.Sound.speak('press touch sensor when on bright color').wait()
-        while not (ts.value()):
+        while (ts.value()):
             value = cs.value()
-            #print('the bright value is ' + str(value))
+            print('the bright value is ' + str(value))
             ev3.Sound.speak('the bright value is ' + str(value)).wait()
             return value
     else :
         ev3.Sound.speak('press touch sensor when on dark color').wait()
-        while not (ts.value()):
+        while (ts.value()):
             value = cs.value()
-            #print('the dark value is ' + str(value))
+            print('the dark value is ' + str(value))
             ev3.Sound.speak('the dark value is ' + str(value)).wait()
             return value
 
@@ -33,4 +33,5 @@ dark = float(getValue(2))
 
 #get threshold value
 threshold = float((bright + dark) / 2)
+print('threshold =' + str(threshold))
 ev3.Sound.speak('The threshold value is ' + str(threshold)).wait()
