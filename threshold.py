@@ -32,7 +32,7 @@ ev3.Sound.speak('get dark value').wait()
 dark = getValue(2)
 
 #get threshold value
-threshold = (bright + dark) / 2
+threshold = int((bright + dark) / 2)
 ev3.Sound.speak('The threshold value is ' + str(threshold))
 
 
