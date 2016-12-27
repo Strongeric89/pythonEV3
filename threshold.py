@@ -14,6 +14,8 @@ def getValue(option):
         ev3.Sound.speak('press touch sensor when on bright color').wait()
         while (ts.value() == 0):
             #empty loop
+            filer = 1
+
         value = cs.value()
         print('the bright value is ' + str(value))
         ev3.Sound.speak('the bright value is ' + str(value)).wait()
@@ -22,6 +24,7 @@ def getValue(option):
         ev3.Sound.speak('press touch sensor when on dark color').wait()
         while (ts.value() ==0):
             #empty loop
+            filer = 1
         value = cs.value()
         print('the dark value is ' + str(value))
         ev3.Sound.speak('the dark value is ' + str(value)).wait()
