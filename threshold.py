@@ -4,8 +4,8 @@ import ev3dev.ev3 as ev3
 #config the motors and sensors
 mA = ev3.LargeMotor('outA')
 mB = ev3.LargeMotor('outB')
-ts = ev3.TouchSensor('in4')
-cs = ev3.ColorSensor('in1')
+ts = ev3.TouchSensor()
+cs = ev3.ColorSensor()
 cs.mode='COL-AMBIENT'
 
 def getValue(option):
