@@ -7,7 +7,7 @@ mB = ev3.LargeMotor('outB')
 
 count = int(0)
 while(True):
-    if not ts.value():
+    if ts.value():
         break
     mA.run_forever(speed_sp=400)
     mB.run_forever(speed_sp=-400)
