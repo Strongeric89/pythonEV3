@@ -42,7 +42,7 @@ button.on_right = right
 button.on_up = up
 button.on_down = down
 button.on_enter = enter
-button.on_backspace = back
+button.on_backspace = backspace
 
 while(True):
     button.process()
