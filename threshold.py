@@ -6,6 +6,7 @@ mA = ev3.LargeMotor('outA')
 mB = ev3.LargeMotor('outB')
 ts = ev3.TouchSensor('in4')
 cs = ev3.ColorSensor('in1')
+cs.mode='COL-AMBIENT'
 
 def getValue(option):
     if(option == 1):
@@ -23,8 +24,6 @@ def getValue(option):
             ev3.Sound.speak('the dark value is ' + str(value))
             return value
 
-
-
 #main
 ev3.Sound.speak('get brigth value').wait()
 bright = getValue(1)
@@ -34,8 +33,3 @@ dark = getValue(2)
 #get threshold value
 threshold = int((bright + dark) / 2)
 ev3.Sound.speak('The threshold value is ' + str(threshold))
-
-
-
-
-
