@@ -6,7 +6,6 @@ mA = ev3.LargeMotor('outA')
 mB = ev3.LargeMotor('outB')
 ts = ev3.TouchSensor()
 cs = ev3.ColorSensor()
-iS = ev3.InfraredSensor()
 
 def getValue(option):
     if(option == 1):
