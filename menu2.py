@@ -35,6 +35,7 @@ speed = int(500)
 
 print('Hello and welcome to the robot menu:\n')
 while(True):
+    ev3.Sound.speak('hello master').wait()
     option = int(input('[1]move forward\n[2]move backwards\n[3]turn to the left\n[4]turn to the right[5]exit\n[6]stop robot\nuser:'))
     if(option == 1):
         #move forward
