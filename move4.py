@@ -7,6 +7,7 @@ mB = ev3.LargeMotor('outB')
 
 count = int(0)
 while(True):
+    print("the robot has done " + str(count) + " turns")
     if ts.value():
         break
     mA.run_forever(speed_sp=-400)
