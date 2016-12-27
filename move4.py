@@ -7,11 +7,14 @@ def led():
 ts = ev3.TouchSensor()
 mA = ev3.LargeMotor('outA')
 mB = ev3.LargeMotor('outB')
+button = ev3.Button()
 
 count = int(0)
 while(True):
     print("the robot has done " + str(count) + " turns")
     if ts.value():
+        break
+    elif button.any():
         break
     mA.run_forever(speed_sp=-400)
     mB.run_forever(speed_sp=400)
