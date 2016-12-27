@@ -4,20 +4,22 @@ import ev3dev.ev3 as ev3
 #config the motors and sensors
 mA = ev3.LargeMotor('outA')
 mB = ev3.LargeMotor('outB')
-ts = ev3.TouchSensor()
-cs = ev3.ColorSensor()
+ts = ev3.TouchSensor('in4')
+cs = ev3.ColorSensor('in1')
 
 def getValue(option):
     if(option == 1):
         ev3.Sound.speak('press touch sensor when on bright color').wait()
-        while(ts.value()):
+        while not (ts.value()):
             value = int(cs.value())
+            print('the bright value is ' + str(value))
             ev3.Sound.speak('the bright value is ' + str(value))
             return value
     else :
         ev3.Sound.speak('press touch sensor when on dark color').wait()
-        while (ts.value()):
+        while not (ts.value()):
             value = int(cs.value())
+            print('the dark value is ' + str(value))
             ev3.Sound.speak('the dark value is ' + str(value))
             return value
 
