@@ -16,16 +16,15 @@ def followLine(threshold):
     flag  = 0
     speed = 100
     while(flag == 0):
-        if button.any():
+        if button.any() or ts.value()==1:
             flag = 1
+            break
         while(cs.value() < threshold):
-            mA.run_to_rel_pos(position_sp="100", speed_sp=speed, stop_action="hold")
-            mB.run_to_rel_pos(position_sp="100", speed_sp=0, stop_action="hold")
+            mA.run_timed(time_sp=3000, speed_sp=speed)
 
 
         while (cs.value() > threshold):
-            mB.run_to_rel_pos(position_sp="100", speed_sp=speed, stop_action="hold")
-            mA.run_to_rel_pos(position_sp="100", speed_sp=0, stop_action="hold")
+            mB.run_timed(time_sp=3000, speed_sp=speed)
 
 
 def getValue(option):
