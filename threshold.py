@@ -11,13 +11,13 @@ def getValue(option):
     if(option == 1):
         ev3.Sound.speak('press touch sensor when on bright color').wait()
         while(ts.value()):
-            value = cs.value()
+            value = int(cs.value())
             ev3.Sound.speak('the bright value is ' + str(value))
             return value
     else :
         ev3.Sound.speak('press touch sensor when on dark color').wait()
         while (ts.value()):
-            value = cs.value()
+            value = int(cs.value())
             ev3.Sound.speak('the dark value is ' + str(value))
             return value
 
@@ -25,9 +25,9 @@ def getValue(option):
 
 #main
 ev3.Sound.speak('get brigth value').wait()
-bright = int(getValue(1))
+bright = getValue(1)
 ev3.Sound.speak('get dark value').wait()
-dark = int(getValue(2))
+dark = getValue(2)
 
 #get threshold value
 threshold = (bright + dark) / 2
