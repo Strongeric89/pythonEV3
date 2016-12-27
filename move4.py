@@ -9,8 +9,8 @@ count = int(0)
 while(True):
     if ts.value():
         break
-    mA.run_forever(speed_sp=400)
-    mB.run_forever(speed_sp=-400)
+    mA.run_forever(speed_sp=-400)
+    mB.run_forever(speed_sp=400)
     ev3.Sound.speak(count).wait()
     count +=1
 #if count reaches 10 stop the motors
