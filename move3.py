@@ -15,4 +15,5 @@ while(True):
 #if count reaches 10 stop the motors
 mA.stop()
 mB.stop()
+#end program
 
